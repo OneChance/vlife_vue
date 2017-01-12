@@ -31,6 +31,12 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel?presets=es2015',
                 exclude: /node_modules/
+            }, {
+                test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+                loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
+            }, {
+                test: /\.css$/,
+                loaders: ['style', 'css']
             }
         ]
     },
